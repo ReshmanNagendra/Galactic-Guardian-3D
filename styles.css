@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&display=swap');
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #020205;
+    font-family: 'Orbitron', sans-serif;
+    touch-action: none;
+    user-select: none;
+}
+#ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+    color: white;
+    z-index: 10;
+}
+.menu-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(5, 5, 30, 0.95);
+    border: 2px solid #4f46e5;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    pointer-events: auto;
+    min-width: 380px;
+    backdrop-filter: blur(25px);
+    box-shadow: 0 0 80px rgba(79, 70, 229, 0.5), inset 0 0 20px rgba(79, 70, 229, 0.2);
+}
+.btn {
+    background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%);
+    color: white;
+    padding: 18px 36px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-top: 1.5rem;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.btn:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 30px rgba(79, 70, 229, 0.6);
+    border-color: #818cf8;
+}
+.stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    opacity: 0.7;
+    font-weight: 900;
+}
+.stat-value {
+    font-size: 2.2rem;
+    font-weight: 900;
+    font-variant-numeric: tabular-nums;
+    background: linear-gradient(to bottom, #fff, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(79, 70, 229, 0.5));
+}
+#pause-indicator {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    display: none;
+}
+.hud-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    opacity: 0.2;
+    transition: opacity 0.3s, box-shadow 0.3s;
+    font-size: 0.8rem;
+}
+.hud-icon.active { opacity: 1; box-shadow: 0 0 15px currentColor; border-color: currentColor; }
+
+#boss-ui {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    display: none;
+    text-align: center;
+    pointer-events: none;
+}
+#boss-health-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,0,0,0.3);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+#boss-health-fill {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #ff0000, #ff5555);
+    box-shadow: 0 0 10px #ff0000;
+    transition: width 0.2s;
+}
